@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/zoomonline/db" VERSION="2024090411" COMMENT="XMLDB file for Moodle blocks/zoomonline"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="block_zoomonline" COMMENT="Table for saving zoom links">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="zoom_meeting_id" TYPE="char" LENGTH="45" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="zoom_encrypted_password" TYPE="char" LENGTH="45" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lecturer_id" TYPE="char" LENGTH="45" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="course_id" TYPE="char" LENGTH="45" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="crscode" TYPE="char" LENGTH="90" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="groupid" TYPE="char" LENGTH="90" NOTNULL="false" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="block_zoomonline_att_check" COMMENT="table for marking attendance as processed">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="zoom_meeting_id" TYPE="char" LENGTH="45" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="start_date" TYPE="datetime" LENGTH="45" NOTNULL="false" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="block_zoomtoken" COMMENT="Table for saving zoom links">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="access_token" TYPE="char" LENGTH="1000" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="current" TYPE="int" LENGTH="11" NOTNULL="false" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="id" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>
